@@ -1,0 +1,8 @@
+{
+  "js": {
+    "src/index.js"
+  },
+  "protoboard": {
+    "role": "web_component"
+  }
+}

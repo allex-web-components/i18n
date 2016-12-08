@@ -1,0 +1,21 @@
+{
+  "name": "allex__web_i18ncomponent",
+  "homepage": "https://github.com/allex-web-components/i18n",
+  "authors": [
+    "HERS Development Team"
+  ],
+  "description": "Component which bundles constraints and initial setup for i18n",
+  "main": "src/index.js",
+  "keywords": [
+    "ecosystem:allex",
+    "ecosystem:i18n"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
