@@ -1,6 +1,9 @@
 {
   "js": {
-    "src/index.js"
+    "all" : [
+      "src/index.js",
+      "src/applib.js"
+    ]
   },
   "protoboard": {
     "role": "web_component"
