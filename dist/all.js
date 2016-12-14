@@ -53,13 +53,15 @@
     var elements = misc.getElementsArr(desc),
       config = this.config;
 
-    elements.push ({
-      name : config.element_name || 'language',
-      type : 'i18n',
-      options : {
-        onLanguageChanged : config.onLanguageChanged
-      }
-    });
+    if (config) {
+      elements.push ({
+        name : config.element_name || 'language',
+        type : 'i18n',
+        options : {
+          onLanguageChanged : config.onLanguageChanged
+        }
+      });
+    }
 
     var CONFIG = ALLEX.lib.extend ({
         defaultLanguageCode : 'en',
