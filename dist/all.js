@@ -1,5 +1,5 @@
 
-//samo da te vidim
+
 (function (allex, global, ALLEX_CONFIGURATION) {
   'use strict';
   var lib = allex.lib,
@@ -8,6 +8,9 @@
     BasicElement = applib.BasicElement,
     misc = applib.misc;
  
+ function localizeBody () {
+   $('body').localize();
+ }
 
   function I18nElement (id, options) {
     BasicElement.call(this, id, options);
@@ -33,7 +36,7 @@
   };
 
   I18nElement.prototype._onLanguageChanged = function () {
-    $('body').localize();
+    localizeBody();
     if (lib.isFunction (this.getConfigVal ('onLanguageChanged'))) {
       this.getConfigVal ('onLanguageChanged')(this.language);
     }
@@ -70,11 +73,6 @@
         load: 'all'
     }, ALLEX_CONFIGURATION.i18n);
 
-    var options = {
-      lng : CONFIG.defaultLanguageCode,
-      fallbackLng: CONFIG.fallbackLng
-    };
-
     if (!CONFIG.translations) {
       throw new Error('Unable to load translation data, CONFIG.translation data');
     }
@@ -98,6 +96,11 @@
     i18next.init({
       debug: true,
       lng: CONFIG.defaultLanguageCode
+    });
+
+    desc.logic.push({
+      triggers: '.!ready',
+      handler: localizeBody
     });
   };
   applib.registerPreprocessor ('i18PreProcessor', I18PreProcessor);
