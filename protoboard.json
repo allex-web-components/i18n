@@ -1,8 +1,7 @@
 {
   "js": {
     "all" : [
-      "src/index.js",
-      "src/applib.js"
+      "src/index.js"
     ]
   },
   "protoboard": {

@@ -1,15 +1,16 @@
-
-
 (function (allex, global, ALLEX_CONFIGURATION) {
   'use strict';
   var lib = allex.lib,
     applib = allex.WEB_COMPONENTS.allex_applib,
     BasicProcessor = applib.BasicProcessor,
     BasicElement = applib.BasicElement,
+    WebElement = applib.getElementType('WebElement'),
     misc = applib.misc;
+
+ WebElement.jqueryDecorators.push(localizer);
  
- function localizeBody () {
-   $('body').localize();
+ function localizer (element) {
+   element.localize();
  }
 
   function I18nElement (id, options) {
@@ -36,7 +37,7 @@
   };
 
   I18nElement.prototype._onLanguageChanged = function () {
-    localizeBody();
+    $('body').localize();
     if (lib.isFunction (this.getConfigVal ('onLanguageChanged'))) {
       this.getConfigVal ('onLanguageChanged')(this.language);
     }
@@ -98,10 +99,6 @@
       lng: CONFIG.defaultLanguageCode
     });
 
-    desc.logic.push({
-      triggers: '.!ready',
-      handler: localizeBody
-    });
   };
   applib.registerPreprocessor ('i18PreProcessor', I18PreProcessor);
 
