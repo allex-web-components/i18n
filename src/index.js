@@ -1,7 +1,7 @@
-(function (allex, global, ALLEX_CONFIGURATION) {
+(function (execlib, global, ALLEX_CONFIGURATION) {
   'use strict';
-  var lib = allex.lib,
-    applib = allex.WEB_COMPONENTS.allex_applib,
+  var lib = execlib.lib,
+    applib = execlib.execSuite.libRegistry.get('allex_applib'),
     BasicProcessor = applib.BasicProcessor,
     BasicElement = applib.BasicElement,
     WebElement = applib.getElementType('WebElement'),
