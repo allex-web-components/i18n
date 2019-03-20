@@ -7,8 +7,6 @@
     WebElement = applib.getElementType('WebElement'),
     misc = applib.misc;
 
- WebElement.jqueryDecorators.push(localizer);
- 
  function localizer (element) {
    element.localize();
  }
@@ -98,6 +96,8 @@
       debug: true,
       lng: CONFIG.defaultLanguageCode
     });
+ 
+    WebElement.jqueryDecorators.push(localizer);
 
   };
   applib.registerPreprocessor ('i18PreProcessor', I18PreProcessor);

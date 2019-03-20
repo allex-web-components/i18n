@@ -1,6 +1,6 @@
 {
   "name": "allex_i18nwebcomponent",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "i18n support for AllexJS WebApps",
   "main": "src/index.js",
   "scripts": {
