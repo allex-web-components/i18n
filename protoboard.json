@@ -4,6 +4,13 @@
       "src/index.js"
     ]
   },
+  "actualtarget": ["dist", "all.js"],
+  "dependencies": {
+    "js" : [
+      "node_modules/i18next/i18next.js",
+      "node_modules/jquery-i18next/jquery-i18next.js"
+    ]
+  },
   "protoboard": {
     "role": "web_component"
   }
